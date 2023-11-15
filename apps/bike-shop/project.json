@@ -6,6 +6,9 @@
   "sourceRoot": "apps/bike-shop/src",
   "tags": [],
   "targets": {
+    "sleep": {
+      "command": "sleep 1200"
+    },
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
