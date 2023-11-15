@@ -62,6 +62,7 @@
       "style": "css"
     }
   },
+  "bustCache": "1",
   "nxCloudAccessToken": "YzFkMTMyZTAtOTY5NS00Y2I2LWEzMjctM2RiYTM0ZWQyODg5fHJlYWQtd3JpdGU=",
   "nxCloudUrl": "https://snapshot.nx.app"
 }
