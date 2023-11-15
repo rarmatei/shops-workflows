@@ -1,10 +1,10 @@
 #!/bin/bash
-      if test -f "$PACKAGE_LOCK_FILEPATH"; then
+      if test -f "package-lock.json"; then
           echo "Using npm"
           npm ci
           exit
       fi
-      if test -f "$YARN_LOCK_FILEPATH"; then
+      if test -f "yarn.lock"; then
           echo "Using yarn"
           yarn install --frozen-lockfile
           exit
