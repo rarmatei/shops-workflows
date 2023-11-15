@@ -2534,17 +2534,17 @@
   resolved "https://registry.yarnpkg.com/@socket.io/component-emitter/-/component-emitter-3.1.0.tgz#96116f2a912e0c02817345b3c10751069920d553"
   integrity sha512-+9jVqKhRSpsc591z5vX+X5Yyw+he/HCB4iQ/RYxw35CEPaY1gnsNE43nf9n9AaYjAQrTiI/mOwKUKdUs9vf7Xg==
 
-"@swc-node/core@^1.10.6":
+"@swc-node/core@^1.10.5":
   version "1.10.6"
   resolved "https://registry.yarnpkg.com/@swc-node/core/-/core-1.10.6.tgz#5c2af68bd4c9c8f5d91178a724af341a4402f5b6"
   integrity sha512-lDIi/rPosmKIknWzvs2/Fi9zWRtbkx8OJ9pQaevhsoGzJSal8Pd315k1W5AIrnknfdAB4HqRN12fk6AhqnrEEw==
 
-"@swc-node/register@~1.6.7":
-  version "1.6.8"
-  resolved "https://registry.yarnpkg.com/@swc-node/register/-/register-1.6.8.tgz#4e2402b42ae5b538d5041e0c4d86d9c3c8d5b323"
-  integrity sha512-74ijy7J9CWr1Z88yO+ykXphV29giCrSpANQPQRooE0bObpkTO1g4RzQovIfbIaniBiGDDVsYwDoQ3FIrCE8HcQ==
+"@swc-node/register@1.6.7":
+  version "1.6.7"
+  resolved "https://registry.yarnpkg.com/@swc-node/register/-/register-1.6.7.tgz#e67690d37ffa7d7d9a935fc6bedc909d56031794"
+  integrity sha512-+Tccbb4+fN8vYx88fdEGFbsCSnF0zBxbVhZkYkFAbVI7h6zVIgA3Jmlok4ZM+q+1KxzPN7AOfhQVuFOYBzZBeA==
   dependencies:
-    "@swc-node/core" "^1.10.6"
+    "@swc-node/core" "^1.10.5"
     "@swc-node/sourcemap-support" "^0.3.0"
     colorette "^2.0.19"
     debug "^4.3.4"
