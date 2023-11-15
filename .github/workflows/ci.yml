@@ -17,5 +17,5 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
-      - run: npm ci
+      - run: yarn install --frozen-lockfile
       - run: npx nx affected -t lint,test,build --parallel=3
