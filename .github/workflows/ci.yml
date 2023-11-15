@@ -17,6 +17,7 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
+      - run: npx nx-cloud@next start-ci-run --distributes-on="2 linux-medium-js" --stop-agents-after="build"
       - run: yarn install --frozen-lockfile
       - run: git branch --track main origin/main
-      - run: npx nx affected -t lint,test,build --parallel=3
+      - run: npx nx affected -t lint,test,build --parallel=2
