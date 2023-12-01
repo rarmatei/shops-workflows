@@ -7,7 +7,7 @@ launch-templates:
       - name: checkout repo
         uses: 'nrwl/nx-cloud-workflows/main/workflow-steps/checkout/main.yaml'
       - name: fail randomly half the time
-        script: 'sleep $((RANDOM % 300 + 60)) && ((RANDOM % 2)) && exit 1'
+        script: 'sleep $((RANDOM % 60 + 1)) && ((RANDOM % 2)) && exit 1'
       - name: node_modules cache
         uses: 'nrwl/nx-cloud-workflows/main/workflow-steps/cache/main.yaml'
         env:
