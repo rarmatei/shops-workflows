@@ -20,5 +20,5 @@ jobs:
       - run: npx nx-cloud@next start-ci-run --distributes-on="5 rares-linux-large-js"
       - run: yarn install --frozen-lockfile
       - run: git branch --track main origin/main
-      - run: npx nx affected -t lint --parallel=1]
+      - run: npx nx affected -t lint --parallel=1
       - run: npx nx-cloud stop-all-agents
