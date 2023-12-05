@@ -7,13 +7,13 @@ launch-templates:
       - name: checkout repo
         uses: 'nrwl/nx-cloud-workflows/main/workflow-steps/checkout/main.yaml'
       - name: fail randomly half the time
-        script: 'sleep $((RANDOM % 20 + 1)) && if (( RANDOM % 2 == 0 )); then exit 1; fi'
+        script: 'sleep $((RANDOM % 20 + 1)) && if (( RANDOM % 4 == 0 )); then exit 1; fi'
       - name: fail randomly half the time
-        script: 'sleep $((RANDOM % 20 + 1)) && if (( RANDOM % 2 == 0 )); then exit 1; fi'
+        script: 'sleep $((RANDOM % 20 + 1)) && if (( RANDOM % 4 == 0 )); then exit 1; fi'
       - name: fail randomly half the time
-        script: 'sleep $((RANDOM % 20 + 1)) && if (( RANDOM % 2 == 0 )); then exit 1; fi'
+        script: 'sleep $((RANDOM % 20 + 1)) && if (( RANDOM % 4 == 0 )); then exit 1; fi'
       - name: fail randomly half the time
-        script: 'sleep $((RANDOM % 20 + 1)) && if (( RANDOM % 2 == 0 )); then exit 1; fi'
+        script: 'sleep $((RANDOM % 20 + 1)) && if (( RANDOM % 4 == 0 )); then exit 1; fi'
       - name: node_modules cache
         uses: 'nrwl/nx-cloud-workflows/main/workflow-steps/cache/main.yaml'
         env:
