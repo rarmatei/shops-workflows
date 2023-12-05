@@ -1,13 +1,10 @@
 package main
 
-func hello() {
-	sum := 0
-	max := int64(2)
-	elements := []int{1, 2, 3, 4, 5}
+func hello(test int) {
 
 	for _, value := range elements {
 		println(value)
-		sum++
+		test--
 		if sum <= int(max) {
 			println("failure tolerated")
 		}
