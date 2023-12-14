@@ -5,13 +5,13 @@ launch-templates:
       NX_CLOUD_ACCESS_TOKEN: '{{secrets.NX_CLOUD_ACCESS_TOKEN}}'
     init-steps:
       - name: sleep
-        script: 'sleep 60'
+        script: 'sleep $((RANDOM % 50 + 1))'
       - name: checkout repo
         uses: 'nrwl/nx-cloud-workflows/main/workflow-steps/checkout/main.yaml'
       - name: fail randomly half the time
         script: 'sleep $((RANDOM % 20 + 1)) && if (( RANDOM % 2 == 0 )); then exit 1; fi'
-      - name: fail randomly half the time
-        script: 'sleep $((RANDOM % 20 + 1)) && if (( RANDOM % 2 == 0 )); then exit 1; fi'
+#      - name: fail randomly half the time
+#        script: 'sleep $((RANDOM % 20 + 1)) && if (( RANDOM % 2 == 0 )); then exit 1; fi'
 #      - name: node_modules cache
 #        uses: 'nrwl/nx-cloud-workflows/main/workflow-steps/cache/main.yaml'
 #        env:
