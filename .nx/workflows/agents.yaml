@@ -4,8 +4,8 @@ launch-templates:
     env:
       NX_CLOUD_ACCESS_TOKEN: '{{secrets.NX_CLOUD_ACCESS_TOKEN}}'
     init-steps:
-#      - name: sleep
-#        script: 'sleep 1800'
+      - name: sleep
+        script: 'sleep 1800'
       - name: checkout repo
         uses: 'nrwl/nx-cloud-workflows/main/workflow-steps/checkout/main.yaml'
 #      - name: fail randomly half the time
