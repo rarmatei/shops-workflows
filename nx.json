@@ -64,7 +64,7 @@
   },
   "bustCache": "131",
   "nxCloudAccessToken": "NmQ0NmNmNDUtZjY1My00NTljLWExZmEtYjgxOWZkYWQ5YWRifHJlYWQtd3JpdGU=",
-  "nxCloudUrl": "http://k8s-default-nxcloudi-f36cd47328-846764514.us-east-1.elb.amazonaws.com",
+  "nxCloudUrl": "http://k8s-default-nxcloudi-f36cd47328-147795971.us-east-1.elb.amazonaws.com",
   "tasksRunnerOptions": {
     "default": {
       "runner": "nx-cloud",
