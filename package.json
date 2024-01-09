@@ -2,7 +2,9 @@
   "name": "@shops-workflows/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "push-change": "jq '.bustCache += 1' nx.json > temp.json && mv temp.json nx.json && git add . && git commit -m \"affect all\" && git push origin HEAD"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~17.0.0",
