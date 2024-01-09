@@ -1,6 +1,7 @@
 launch-templates:
   rares-linux-large-js:
     resourceClass: "docker_linux_amd64/large"
+    image: 'ubuntu:20.22-node20.12'
     env:
       NX_CLOUD_ACCESS_TOKEN: '{{secrets.NX_CLOUD_ACCESS_TOKEN}}'
     init-steps:
