@@ -9,6 +9,8 @@ launch-templates:
         uses: 'nrwl/nx-cloud-workflows/main/workflow-steps/checkout/main.yaml'
       - name: sleep
         script: 'sleep $((RANDOM % 120 + 1))'
+      - name: sleep a lot
+        script: sleep 300
 #      - name: print lots of logs
 #        script: 'yes "This is a line of text." | head -c 5M'
 #      - name: sleep
