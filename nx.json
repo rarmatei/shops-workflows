@@ -1,6 +1,9 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "targetDefaults": {
+    "sleep": {
+      "cache": true
+    },
     "build": {
       "cache": true,
       "dependsOn": ["^build"],
@@ -62,6 +65,6 @@
       "style": "css"
     }
   },
-  "nxCloudAccessToken": "YzFkMTMyZTAtOTY5NS00Y2I2LWEzMjctM2RiYTM0ZWQyODg5fHJlYWQtd3JpdGU=",
-  "nxCloudUrl": "https://snapshot.nx.app"
+  "bustCache": 202,
+  "nxCloudAccessToken": "ZGViNWU2MmUtYjAxOS00ZmQ3LTgxN2YtYmE0ZjdjNDY2M2M1fHJlYWQtd3JpdGU="
 }
