@@ -6,13 +6,8 @@
     },
     "build": {
       "cache": true,
-      "dependsOn": [
-        "^build"
-      ],
-      "inputs": [
-        "production",
-        "^production"
-      ]
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
     },
     "lint": {
       "cache": true,
@@ -25,18 +20,11 @@
     },
     "e2e": {
       "cache": true,
-      "inputs": [
-        "default",
-        "^production"
-      ]
+      "inputs": ["default", "^production"]
     },
     "@nx/jest:jest": {
       "cache": true,
-      "inputs": [
-        "default",
-        "^production",
-        "{workspaceRoot}/jest.preset.js"
-      ],
+      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"],
       "options": {
         "passWithNoTests": true
       },
@@ -49,10 +37,7 @@
     }
   },
   "namedInputs": {
-    "default": [
-      "{projectRoot}/**/*",
-      "sharedGlobals"
-    ],
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [
       "default",
       "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
@@ -80,15 +65,6 @@
       "style": "css"
     }
   },
-  "bustCache": 177,
-  "nxCloudAccessToken": "NmQ0NmNmNDUtZjY1My00NTljLWExZmEtYjgxOWZkYWQ5YWRifHJlYWQtd3JpdGU=",
-  "nxCloudUrl": "http://k8s-default-nxcloudi-f36cd47328-147795971.us-east-1.elb.amazonaws.com",
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "nx-cloud",
-      "options": {
-        "customProxyConfigPath": "./custom-proxy-config.js"
-      }
-    }
-  }
+  "bustCache": 1,
+  "nxCloudAccessToken": "ZGViNWU2MmUtYjAxOS00ZmQ3LTgxN2YtYmE0ZjdjNDY2M2M1fHJlYWQtd3JpdGU="
 }
