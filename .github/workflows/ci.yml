@@ -17,6 +17,7 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
+      - run: git branch --track main origin/main
 #      - run: npx nx-cloud@next start-ci-run --distributes-on="6 rares-linux-large-js"
       - run: yarn install --frozen-lockfile
       - run: npx nx affected -t lint,build,test,e2e
