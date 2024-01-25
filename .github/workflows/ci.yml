@@ -15,10 +15,10 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: 20ß
           cache: 'npm'
       - run: git branch --track main origin/main
-      - run: npx nx-cloud@next start-ci-run --distributes-on="6 rares-linux-large-js"
+      - run: npx nx-cloud@next start-ci-run --distributes-on="6 linux-medium-js"
       - run: yarn install --frozen-lockfile
       - run: npx nx affected -t lint,build,test
 
