@@ -15,7 +15,7 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v3
         with:
-          node-version: 20ß
+          node-version: 20
           cache: 'npm'
       - run: git branch --track main origin/main
       - run: npx nx-cloud@next start-ci-run --distributes-on="6 linux-medium-js"
