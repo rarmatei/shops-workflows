@@ -7,20 +7,6 @@ launch-templates:
     init-steps:
       - name: checkout repo
         uses: 'nrwl/nx-cloud-workflows/main/workflow-steps/checkout/main.yaml'
-#      - name: sleep
-#        script: 'sleep $((RANDOM % 120 + 1))'
-#      - name: sleep a lot
-#        script: sleep 300
-#      - name: print lots of logs
-#        script: 'yes "This is a line of text." | head -c 5M'
-#      - name: sleep
-#        script: 'sleep $((RANDOM % 120 + 1))'
-#      - name: sleep more
-#        script: 'sleep 1200'
-#      - name: fail randomly half the time
-#        script: 'sleep $((RANDOM % 20 + 1)) && if (( RANDOM % 2 == 0 )); then exit 1; fi'
-#      - name: fail randomly half the time
-#        script: 'sleep $((RANDOM % 20 + 1)) && if (( RANDOM % 2 == 0 )); then exit 1; fi'
       - name: node_modules cache
         uses: 'nrwl/nx-cloud-workflows/main/workflow-steps/cache/main.yaml'
         env:
@@ -28,4 +14,6 @@ launch-templates:
           PATHS: 'node_modules'
           BASE_BRANCH: 'main'
       - name: NPM Install
-        uses: 'nrwl/nx-cloud-workflows/main/workflow-steps/install-node-modules/main.yaml'
+        script: |
+          sleep $((RANDOM % 20 + 1)) && if (( RANDOM % 6 == 0 )); then exit 1; fi
+          yarn install --frozen-lockfile
