@@ -1,12 +1,9 @@
 # CI without distribution
 name: CI
 on:
-  push:
-    branches:
-      - main
   pull_request:
     branches:
-      - main
+      - ci-distribution-base
 jobs:
   main:
     runs-on: ubuntu-latest
