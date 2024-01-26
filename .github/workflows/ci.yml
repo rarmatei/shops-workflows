@@ -3,7 +3,7 @@ name: CI
 on:
   pull_request:
     branches:
-      - ci-distribution-base
+      - ci-without-distribution-base
 jobs:
   main:
     runs-on: ubuntu-latest
