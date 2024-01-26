@@ -19,4 +19,5 @@ jobs:
       - run: npm ci
       - run: npx nx affected -t build,test,lint
       - run: deploy-pr-preview.sh
+      - run: nx run-many -t e2e
       - run: deploy-test-results-to-sonarqube.sh
