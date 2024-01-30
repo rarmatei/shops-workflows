@@ -1,4 +1,4 @@
-name: CI
+name: CI_two
 on:
   push:
     branches:
