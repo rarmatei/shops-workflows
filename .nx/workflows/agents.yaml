@@ -10,6 +10,17 @@ launch-templates:
 #      SELECTED_PM: 'pnpm'
       NPM_CONFIG_PREFIX: '/home/workflows/.npm-global'
     init-steps:
+      - name: print info
+        script: |
+          echo "User ID (UID): $(id -u)"
+          echo "Group ID (GID): $(id -g)"
+          echo "Primary Group Name: $(id -gn)"
+          echo "All Group Information: $(id)"
+          whoami
+      - name: install package
+        script: |
+          apt-get update
+          apt-get install -y tree
       - name: Checkout
         uses: 'nrwl/nx-cloud-workflows/v1.1/workflow-steps/checkout/main.yaml'
       - name: Cache restore
@@ -29,6 +40,7 @@ launch-templates:
       - name: Pnpm Install
         script: |
           pnpm install --frozen-lockfile
+
 
       - name: Install Cypress
         script: pnpm exec cypress install
