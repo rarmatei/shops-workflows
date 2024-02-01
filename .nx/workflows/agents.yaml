@@ -59,6 +59,8 @@ launch-templates:
 
       - name: Load Cargo Env
         script: echo "PATH=$HOME/.cargo/bin:$PATH" >> $NX_CLOUD_ENV
+      - name: sleep
+        script: sleep 1200
   rares-linux-large-js:
     resourceClass: "docker_linux_amd64/large"
     image: 'us-east1-docker.pkg.dev/nxcloudoperations/nx-cloud-enterprise-public/nx-agents-base-images:ubuntu-22.04-node20.9'
