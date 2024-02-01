@@ -11,8 +11,8 @@ launch-templates:
 #      SELECTED_PM: 'pnpm'
       NPM_CONFIG_PREFIX: '/home/workflows/.npm-global'
     init-steps:
-#      - name: sleep
-#        script: sleep 1200
+      - name: sleep
+        script: sleep 1200
       - name: print info
         script: |
           echo "User ID (UID): $(id -u)"
