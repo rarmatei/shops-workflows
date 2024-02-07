@@ -5,7 +5,7 @@ on:
       - ci-without-distribution-base
 
 env:
-  NX_CLOUD_VERBOSE_LOGGING: true
+  NX_VERBOSE_LOGGING: true
 
 jobs:
   main:
