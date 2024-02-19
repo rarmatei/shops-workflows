@@ -88,7 +88,7 @@ launch-templates:
       - name: node_modules cache
         uses: 'nrwl/nx-cloud-workflows/main/workflow-steps/cache/main.yaml'
         env:
-          KEY: 'yarn.lock'
+          KEY: 'yarn.lock | "v1"'
           PATHS: 'node_modules'
           BASE_BRANCH: 'main'
       - name: NPM Install
