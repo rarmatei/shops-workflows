@@ -1,6 +1,6 @@
 launch-templates:
   custom-linux-medium:
-    resourceClass: 'docker_linux_amd64/medium'
+    resourceClass: 'docker_linux_amd64/large'
     image: 'ubuntu22.04-node20.9-v1'
     init-steps:
       - name: Checkout
