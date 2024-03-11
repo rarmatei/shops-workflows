@@ -1,31 +1,20 @@
 launch-templates:
-  rares-linux-large-js:
-    resourceClass: "docker_linux_amd64/large"
-    image: 'us-east1-docker.pkg.dev/nxcloudoperations/nx-cloud-enterprise-public/nx-agents-base-images:ubuntu-22.04-node20.9'
-    env:
-      NX_CLOUD_ACCESS_TOKEN: '{{secrets.NX_CLOUD_ACCESS_TOKEN}}'
+  custom-linux-medium:
+    resourceClass: 'docker_linux_amd64/large'
+    image: 'ubuntu22.04-node20.9-v1'
     init-steps:
-      - name: checkout repo
+      - name: Checkout
         uses: 'nrwl/nx-cloud-workflows/main/workflow-steps/checkout/main.yaml'
-#      - name: sleep
-#        script: 'sleep $((RANDOM % 120 + 1))'
-#      - name: sleep a lot
-#        script: sleep 300
-#      - name: print lots of logs
-#        script: 'yes "This is a line of text." | head -c 5M'
-#      - name: sleep
-#        script: 'sleep $((RANDOM % 120 + 1))'
-#      - name: sleep more
-#        script: 'sleep 1200'
-#      - name: fail randomly half the time
-#        script: 'sleep $((RANDOM % 20 + 1)) && if (( RANDOM % 2 == 0 )); then exit 1; fi'
-#      - name: fail randomly half the time
-#        script: 'sleep $((RANDOM % 20 + 1)) && if (( RANDOM % 2 == 0 )); then exit 1; fi'
-      - name: node_modules cache
+      - name: Restore Node Modules Cache
         uses: 'nrwl/nx-cloud-workflows/main/workflow-steps/cache/main.yaml'
         env:
-          KEY: 'yarn.lock'
+          KEY: 'package-lock.json|yarn.lock|pnpm-lock.yaml'
           PATHS: 'node_modules'
           BASE_BRANCH: 'main'
-      - name: NPM Install
+      - name: Install Node Modules
         uses: 'nrwl/nx-cloud-workflows/main/workflow-steps/install-node-modules/main.yaml'
+      - name: Install Rust
+        script: |
+          curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | sh -s -- -y
+          source "$HOME/.cargo/env"
+          rustup toolchain install 1.70.0

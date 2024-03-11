@@ -1,0 +1,23 @@
+name: Run CI
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  app-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: 'npm'
+      - run: npm ci
+      - run: npx nx affected -t build,test,lint
+      - run: deploy-pr-preview.sh
+      - run: nx run-many -t e2e
+      - run: deploy-test-results-to-sonarqube.sh
