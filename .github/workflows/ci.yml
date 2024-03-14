@@ -2,7 +2,7 @@ name: CI
 on:
   pull_request:
     branches:
-      - ci-without-distribution-base
+      - main
 
 env:
   NX_VERBOSE_LOGGING: true
