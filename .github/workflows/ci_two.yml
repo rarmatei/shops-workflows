@@ -1,0 +1,27 @@
+name: CI
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 20
+      - run: npx nx-cloud@next start-ci-run --distributes-on="3 rares-linux-large-js"
+      - name: Install pnpm
+        run: npm install -g pnpm
+      - name: Install dependencies
+        run: pnpm install
+      - run: git branch --track main origin/main
+      - run: npx nx affected -t lint --parallel=1
+      - run: npx nx-cloud stop-all-agents
+
