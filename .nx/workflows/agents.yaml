@@ -27,5 +27,9 @@ launch-templates:
           KEY: 'yarn.lock'
           PATHS: 'node_modules'
           BASE_BRANCH: 'main'
-      - name: NPM Install
-        uses: 'nrwl/nx-cloud-workflows/main/workflow-steps/install-node-modules/main.yaml'
+      - name: Install Pnpm
+        script: |
+          npm install -g @pnpm/exe@8.7.4
+      - name: Pnpm Install
+        script: |
+          pnpm install --frozen-lockfile
