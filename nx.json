@@ -4,6 +4,9 @@
     "sleep": {
       "cache": true
     },
+    "node-version": {
+      "cache": true
+    },
     "build": {
       "cache": true,
       "dependsOn": [
@@ -80,6 +83,6 @@
       "style": "css"
     }
   },
-  "bustCache": 305,
+  "bustCache": 360,
   "nxCloudAccessToken": "ZGViNWU2MmUtYjAxOS00ZmQ3LTgxN2YtYmE0ZjdjNDY2M2M1fHJlYWQtd3JpdGU="
 }
