@@ -1,7 +1,7 @@
 launch-templates:
   custom-linux-small-js:
     resource-class: "docker_linux_amd64/small"
-    image: 'ubuntu22.04-node20.9-v2'
+    image: 'ubuntu22.04-node20.11-v3'
     init-steps:
       - name: Checkout
         uses: 'nrwl/nx-cloud-workflows/v3.5/workflow-steps/checkout/main.yaml'
@@ -25,7 +25,7 @@ launch-templates:
         uses: 'nrwl/nx-cloud-workflows/v3.5/workflow-steps/install-browsers/main.yaml'
   custom-linux-medium-js:
     resource-class: "docker_linux_amd64/medium"
-    image: 'ubuntu22.04-node20.9-v2'
+    image: 'ubuntu22.04-node20.11-v3'
     init-steps:
       - name: Checkout
         uses: 'nrwl/nx-cloud-workflows/v3.5/workflow-steps/checkout/main.yaml'
@@ -49,7 +49,7 @@ launch-templates:
         uses: 'nrwl/nx-cloud-workflows/v3.5/workflow-steps/install-browsers/main.yaml'
   custom-linux-medium-plus-js:
     resource-class: "docker_linux_amd64/medium+"
-    image: 'ubuntu22.04-node20.9-v2'
+    image: 'ubuntu22.04-node20.11-v3'
     init-steps:
       - name: Checkout
         uses: 'nrwl/nx-cloud-workflows/v3.5/workflow-steps/checkout/main.yaml'
@@ -73,7 +73,7 @@ launch-templates:
         uses: 'nrwl/nx-cloud-workflows/v3.5/workflow-steps/install-browsers/main.yaml'
   custom-linux-large-js:
     resource-class: "docker_linux_amd64/large"
-    image: 'ubuntu22.04-node20.9-v2'
+    image: 'ubuntu22.04-node20.11-v3'
     init-steps:
       - name: Checkout
         uses: 'nrwl/nx-cloud-workflows/v3.5/workflow-steps/checkout/main.yaml'
@@ -95,9 +95,9 @@ launch-templates:
         uses: 'nrwl/nx-cloud-workflows/v3.5/workflow-steps/install-node-modules/main.yaml'
       - name: Install Browsers (if needed)
         uses: 'nrwl/nx-cloud-workflows/v3.5/workflow-steps/install-browsers/main.yaml'
-  custom-linux-large-plus-js:
+  linux-large-plus-js:
     resource-class: "docker_linux_amd64/large+"
-    image: 'ubuntu22.04-node20.9-v2'
+    image: 'ubuntu22.04-node20.11-v3'
     init-steps:
       - name: Checkout
         uses: 'nrwl/nx-cloud-workflows/v3.5/workflow-steps/checkout/main.yaml'
@@ -119,9 +119,9 @@ launch-templates:
         uses: 'nrwl/nx-cloud-workflows/v3.5/workflow-steps/install-node-modules/main.yaml'
       - name: Install Browsers (if needed)
         uses: 'nrwl/nx-cloud-workflows/v3.5/workflow-steps/install-browsers/main.yaml'
-  custom-linux-extra-large-js:
+  linux-extra-large-js:
     resource-class: "docker_linux_amd64/extra_large"
-    image: 'ubuntu22.04-node20.9-v2'
+    image: 'ubuntu22.04-node20.11-v3'
     init-steps:
       - name: Checkout
         uses: 'nrwl/nx-cloud-workflows/v3.5/workflow-steps/checkout/main.yaml'
@@ -143,9 +143,9 @@ launch-templates:
         uses: 'nrwl/nx-cloud-workflows/v3.5/workflow-steps/install-node-modules/main.yaml'
       - name: Install Browsers (if needed)
         uses: 'nrwl/nx-cloud-workflows/v3.5/workflow-steps/install-browsers/main.yaml'
-  custom-linux-extra-large-plus-js:
+  linux-extra-large-plus-js:
     resource-class: "docker_linux_amd64/extra_large+"
-    image: 'ubuntu22.04-node20.9-v2'
+    image: 'ubuntu22.04-node20.11-v3'
     init-steps:
       - name: Checkout
         uses: 'nrwl/nx-cloud-workflows/v3.5/workflow-steps/checkout/main.yaml'
