@@ -9,6 +9,9 @@
     "sleep": {
       "command": "sleep 1200"
     },
+    "node-version": {
+      "command": "echo 'node version is...' && node -v"
+    },
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
