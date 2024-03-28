@@ -65,6 +65,15 @@
       "style": "css"
     }
   },
-  "bustCache": 202,
-  "nxCloudAccessToken": "ZGViNWU2MmUtYjAxOS00ZmQ3LTgxN2YtYmE0ZjdjNDY2M2M1fHJlYWQtd3JpdGU="
+  "bustCache": 405,
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "nx-cloud22",
+      "options": {
+        "customProxyConfigPath": "./custom-proxy-config.js"
+      }
+    }
+  },
+  "nxCloudAccessToken": "NmQyN2E2OTctN2Q0Ni00MTc5LThlY2QtMDU4YzU5ZTUxNDU3fHJlYWQtd3JpdGU=",
+  "nxCloudUrl": "http://localhost:4203"
 }
