@@ -31,7 +31,7 @@ launch-templates:
         uses: 'nrwl/nx-cloud-workflows/v3.5/workflow-steps/checkout/main.yaml'
       - name: sleep
         script: |
-          echo "pwd:"
+          echo "pwd 1:"
           pwd
           echo "id:"
           id
