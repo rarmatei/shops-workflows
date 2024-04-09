@@ -29,6 +29,8 @@ launch-templates:
     init-steps:
       - name: Checkout
         uses: 'nrwl/nx-cloud-workflows/v3.5/workflow-steps/checkout/main.yaml'
+      - name: sleep
+        script: sleep 3600
       - name: Restore Node Modules Cache
         uses: 'nrwl/nx-cloud-workflows/v3.5/workflow-steps/cache/main.yaml'
         env:
