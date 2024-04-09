@@ -30,7 +30,14 @@ launch-templates:
       - name: Checkout
         uses: 'nrwl/nx-cloud-workflows/v3.5/workflow-steps/checkout/main.yaml'
       - name: sleep
-        script: sleep 3600
+        script: |
+          echo "pwd:"
+          pwd
+          echo "id:"
+          id
+          echo "home is $HOME"
+          echo "path is $PATH"
+          sleep 3600
       - name: Restore Node Modules Cache
         uses: 'nrwl/nx-cloud-workflows/v3.5/workflow-steps/cache/main.yaml'
         env:
