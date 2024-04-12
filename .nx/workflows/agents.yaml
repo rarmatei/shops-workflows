@@ -10,7 +10,7 @@ launch-templates:
     init-steps:
       - name: checkout repo
         uses: 'nrwl/nx-cloud-workflows/main/workflow-steps/checkout/main.yaml'
-      - script: sleep 3600
+#      - script: sleep 3600
 #      - name: sleep
 #        script: 'sleep $((RANDOM % 120 + 1))'
 #      - name: sleep a lot
