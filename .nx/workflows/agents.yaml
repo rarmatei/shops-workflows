@@ -26,7 +26,7 @@ launch-templates:
 #      - name: fail randomly half the time
 #        script: 'sleep $((RANDOM % 20 + 1)) && if (( RANDOM % 2 == 0 )); then exit 1; fi'
       - name: node_modules cache
-        uses: 'nrwl/nx-cloud-workflows222/main/workflow-steps/cache/main.yaml'
+        uses: 'nrwl/nx-cloud-workflows/main/workflow-steps/cache/main.yaml'
         env:
           KEY: 'yarn.lock'
           PATHS: 'node_modules'
