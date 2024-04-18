@@ -16,7 +16,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 20
-      - run: npx nx-cloud@latest start-ci-run --distribute-on="6 rares-linux-small-js"
+      - run: npx nx-cloud@latest start-ci-run --distribute-on="3 linux-medium-js"
       - name: Install pnpm
         run: npm install -g pnpm
       - name: Install dependencies
