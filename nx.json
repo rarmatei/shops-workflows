@@ -80,10 +80,10 @@
       "style": "css"
     }
   },
-  "bustCache": 408,
+  "bustCache": 409,
   "tasksRunnerOptions": {
     "default": {
-      "runner": "nx-cloud2222 ",
+      "runner": "nx-cloud",
       "options": {
         "customProxyConfigPath": "./custom-proxy-config.js"
       }
