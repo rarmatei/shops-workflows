@@ -1,11 +1,12 @@
 name: CI
 on:
-  push:
-    branches:
-      - main
   pull_request:
     branches:
       - main
+
+env:
+  NX_VERBOSE_LOGGING: true
+
 jobs:
   main:
     runs-on: ubuntu-latest
@@ -18,7 +19,7 @@ jobs:
           node-version: 20
           cache: 'npm'
       - run: git branch --track main origin/main
-#      - run: npx nx-cloud start-ci-run --distributes-on="6 linux-medium-js" --stop-agents-after="build"
+      - run: npx nx-cloud start-ci-run --distributes-on="3 linux-medium-js" --stop-agents-after="build"
       - run: yarn install --frozen-lockfile
-      - run: npx nx affected --target=build,lint,test
+      - run: npx nx affected --target=build,lint,test,node-version
 
