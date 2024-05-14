@@ -2,8 +2,8 @@ launch-templates:
   rares-linux-small-js:
     resourceClass: "docker_linux_amd64/small"
 #    enable-dind-with-privileged-containers: true
-    image: 'us-east1-docker.pkg.dev/nxcloudoperations/nx-cloud-enterprise-public/nx-agents-base-images:ubuntu22.04-node20.9-v11'
-#    image: 'us-east1-docker.pkg.dev/nxcloudoperations/nx-cloud-enterprise-public/nx-agents-base-images:ubuntu22.04-node20.11-v4'
+#    image: 'us-east1-docker.pkg.dev/nxcloudoperations/nx-cloud-enterprise-public/nx-agents-base-images:ubuntu22.04-node20.9-v11'
+    image: 'us-east1-docker.pkg.hello.dev/nxcloudoperations/nx-cloud-enterprise-public/nx-agents-base-images:ubuntu22.04-node20.11-v4'
     env:
       NX_CLOUD_ACCESS_TOKEN: '{{secrets.NX_CLOUD_ACCESS_TOKEN}}'
       NPM_CONFIG_PREFIX: '/home/workflows/.npm-global'
