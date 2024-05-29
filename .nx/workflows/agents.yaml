@@ -9,7 +9,7 @@ launch-templates:
       NPM_CONFIG_PREFIX: '/home/workflows/.npm-global'
     init-steps:
       - name: checkout repo
-        uses: 'nrwl/nx-cloud-workflows/main/workflow-steps/checkout/main.yaml'
+        uses: 'nrwl/nx-cloud-workflows/test-broken-yaml/workflow-steps/checkout/main.yaml'
 #      - script: sleep 3600
 #      - name: sleep
 #        script: 'sleep $((RANDOM % 120 + 1))'
