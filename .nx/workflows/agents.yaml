@@ -90,7 +90,7 @@ launch-templates:
       - name: Cache restore
         uses: 'nrwl/nx-cloud-workflows/v1.1/workflow-steps/cache/main.yaml'
         env:
-          KEY: 'pnpm-lock.yaml'
+          KEY: '"1" | pnpm-lock.yaml'
           PATHS: |
             node_modules
             ~/.cache/Cypress
