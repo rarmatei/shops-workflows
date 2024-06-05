@@ -80,9 +80,7 @@
       "style": "css"
     }
   },
-  "bustCache": 371,
-  "nxCloudAccessToken": "NmQ0NmNmNDUtZjY1My00NTljLWExZmEtYjgxOWZkYWQ5YWRifHJlYWQtd3JpdGU=",
-  "nxCloudUrl": "http://k8s-default-nxcloudi-f36cd47328-16725451.us-east-1.elb.amazonaws.com",
+  "bustCache": 372,
   "tasksRunnerOptions": {
     "default": {
       "runner": "nx-cloud",
@@ -90,5 +88,7 @@
         "customProxyConfigPath": "./custom-proxy-config.js"
       }
     }
-  }
+  },
+  "nxCloudAccessToken": "NWQyYzk4MWUtNDVlMi00NDhjLTljYmMtNmZlYTM5OGVkYzRjfHJlYWQtd3JpdGU=",
+  "nxCloudUrl": "http://100.28.216.183"
 }
