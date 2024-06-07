@@ -1,0 +1,16 @@
+image: node:20
+
+clone:
+  depth: full
+
+pipelines:
+  pull-requests:
+    '**':
+      - step:
+          name: 'Build and test affected apps on Pull Requests'
+          script:
+            - npx nx-cloud@latest start-ci-run --distribute-on="6 rares-linux-small-js"
+            - npm install -g pnpm
+            - pnpm install
+            - npx nx affected -t lint --parallel=1
+            - npx nx-cloud stop-all-agents
