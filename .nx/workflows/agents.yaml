@@ -33,7 +33,7 @@ launch-templates:
           BASE_BRANCH: 'main'
       - name: Install Pnpm
         script: |
-          npm install -g @pnpm/exe@8.7.4
+          npm install -g @pnpm/exe@8.7.4 --force
       - name: Pnpm Install
         script: |
           pnpm install --frozen-lockfile
