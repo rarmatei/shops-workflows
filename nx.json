@@ -6,13 +6,8 @@
     },
     "build": {
       "cache": true,
-      "dependsOn": [
-        "^build"
-      ],
-      "inputs": [
-        "production",
-        "^production"
-      ]
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
     },
     "lint": {
       "cache": true,
@@ -25,18 +20,11 @@
     },
     "e2e": {
       "cache": true,
-      "inputs": [
-        "default",
-        "^production"
-      ]
+      "inputs": ["default", "^production"]
     },
     "@nx/jest:jest": {
       "cache": true,
-      "inputs": [
-        "default",
-        "^production",
-        "{workspaceRoot}/jest.preset.js"
-      ],
+      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"],
       "options": {
         "passWithNoTests": true
       },
@@ -49,10 +37,7 @@
     }
   },
   "namedInputs": {
-    "default": [
-      "{projectRoot}/**/*",
-      "sharedGlobals"
-    ],
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [
       "default",
       "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
@@ -81,14 +66,6 @@
     }
   },
   "bustCache": 433,
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "nx-cloud22",
-      "options": {
-        "customProxyConfigPath": "./custom-proxy-config.js"
-      }
-    }
-  },
-  "nxCloudAccessToken": "YWQ5YTliYTktNzFmMi00ZGM3LWExZjktNDE3NTU3ZmJkOWFhfHJlYWQtd3JpdGU=",
+  "nxCloudAccessToken": "Y2Q2OTE0MDItM2JhNS00MTAxLTg0N2ItZjRiZDFjYTRiNWEyfHJlYWQtd3JpdGU=",
   "nxCloudUrl": "http://localhost:4203"
 }
