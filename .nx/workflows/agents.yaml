@@ -25,7 +25,7 @@ launch-templates:
           sudo apt-get update
           sudo apt-get install -y tree
       - name: Checkout
-        uses: 'nrwl/nx-cloud-workflows/v1.1/workflow-steps/checkout/main.yaml'
+        uses: 'https://rares:BBDC-NjExOTUzNjQ0MTE0Ogq%2Ft7H1KUS0mdTBlIgQhLUMGCO5@bitbucket.ops.cloud.nx.app/projects/SHOPS/repos/nx-cloud-workflows/raw/workflow-steps/checkout/main.yaml'
       - name: Cache restore
         uses: 'nrwl/nx-cloud-workflows/v1.1/workflow-steps/cache/main.yaml'
         env:
