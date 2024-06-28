@@ -7,6 +7,7 @@ launch-templates:
     env:
       NX_CLOUD_ACCESS_TOKEN: '{{secrets.NX_CLOUD_ACCESS_TOKEN}}'
       NPM_CONFIG_PREFIX: '/home/workflows/.npm-global'
+      NODE_OPTIONS: '--max-old-space-size=12288'
     init-steps:
       - name: checkout repo
         uses: 'nrwl/nx-cloud-workflows/main/workflow-steps/checkout/main.yaml'
