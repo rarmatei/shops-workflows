@@ -10,6 +10,19 @@ launch-templates:
     init-steps:
       - name: checkout repo
         uses: 'nrwl/nx-cloud-workflows/main/workflow-steps/checkout/main.yaml'
+      - name: out of memory
+        script: |
+          node -e "
+          console.log('Starting up...');
+          let arr = [];
+          const size = 1024 * 1024 * 10; // Approximately 10 MB per element
+          const iterations = 1024; // 10 MB * 1024 = 10 GB
+          for (let i = 0; i < iterations; i++) {
+            arr.push(new Array(size).fill('x'));
+            console.log(\`Allocated \${(i + 1) * 10} MB\`);
+          }
+          console.log('Done. Consumed more than 10GB of memory.');
+          "
 #      - script: sleep 3600
 #      - name: sleep
 #        script: 'sleep $((RANDOM % 120 + 1))'
@@ -25,15 +38,15 @@ launch-templates:
 #        script: 'sleep $((RANDOM % 20 + 1)) && if (( RANDOM % 2 == 0 )); then exit 1; fi'
 #      - name: fail randomly half the time
 #        script: 'sleep $((RANDOM % 20 + 1)) && if (( RANDOM % 2 == 0 )); then exit 1; fi'
-      - name: node_modules cache 2
-        uses: 'nrwl/nx-cloud-workflows/main/workflow-steps/cache/main.yaml'
-        env:
-          KEY: 'yarn.lock'
-          PATHS: 'node_modules'
-          BASE_BRANCH: 'main'
-      - name: Install Pnpm
-        script: |
-          npm install -g @pnpm/exe@8.7.4 --force
-      - name: Pnpm Install
-        script: |
-          pnpm install --frozen-lockfile
+#      - name: node_modules cache 2
+#        uses: 'nrwl/nx-cloud-workflows/main/workflow-steps/cache/main.yaml'
+#        env:
+#          KEY: 'yarn.lock'
+#          PATHS: 'node_modules'
+#          BASE_BRANCH: 'main'
+#      - name: Install Pnpm
+#        script: |
+#          npm install -g @pnpm/exe@8.7.4 --force
+#      - name: Pnpm Install
+#        script: |
+#          pnpm install --frozen-lockfile
