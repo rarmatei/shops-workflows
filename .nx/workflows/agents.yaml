@@ -16,12 +16,18 @@ launch-templates:
       - name: out of cpus
         script: |
           node -e "
-          function intensiveTask() {
-            while (true) {
-              Math.sqrt(Math.random());
+            function intensiveTask() {
+              const startTime = Date.now();
+              while (Date.now() - startTime < 10000) { 
+                Math.sqrt(Math.random());
+              }
             }
-          }
-          intensiveTask();
+            function runTasksParallel(numTasks) {
+              for (let i = 0; i < numTasks; i++) {
+                intensiveTask();
+              }
+            }
+            runTasksParallel(10);
           "
       - name: out of memory
         script: |
