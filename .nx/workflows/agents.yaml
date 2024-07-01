@@ -11,36 +11,16 @@ launch-templates:
     init-steps:
       - name: checkout repo
         uses: 'nrwl/nx-cloud-workflows/main/workflow-steps/checkout/main.yaml'
-#      - name: sleep 30
-#        script: sleep 30
-      - name: out of cpus
-        script: |
-          node -e "
-            function intensiveTask() {
-              const startTime = Date.now();
-              while (Date.now() - startTime < 10000) { 
-                Math.sqrt(Math.random());
-              }
-            }
-            function runTasksParallel(numTasks) {
-              for (let i = 0; i < numTasks; i++) {
-                intensiveTask();
-              }
-            }
-            runTasksParallel(10000);
-          "
       - name: out of memory
         script: |
           node -e "
           console.log('Starting up...');
           let arr = [];
-          const size = 1024 * 1024 * 10; // Approximately 10 MB per element
-          const iterations = 1024; // 10 MB * 1024 = 10 GB
+          const size = 1024 * 1024 * 10; 
+          const iterations = 1024;
           for (let i = 0; i < iterations; i++) {
             arr.push(new Array(size).fill('x'));
-            console.log(\`Allocated \${(i + 1) * 10} MB\`);
           }
-          console.log('Done. Consumed more than 10GB of memory.');
           "
 #      - script: sleep 3600
 #      - name: sleep
