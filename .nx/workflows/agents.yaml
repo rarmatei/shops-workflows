@@ -11,8 +11,18 @@ launch-templates:
     init-steps:
       - name: checkout repo
         uses: 'nrwl/nx-cloud-workflows/main/workflow-steps/checkout/main.yaml'
-      - name: sleep 30
-        script: sleep 30
+#      - name: sleep 30
+#        script: sleep 30
+      - name: out of cpus
+        script: |
+          node -e "
+          function intensiveTask() {
+            while (true) {
+              Math.sqrt(Math.random());
+            }
+          }
+          intensiveTask();
+          "
       - name: out of memory
         script: |
           node -e "
