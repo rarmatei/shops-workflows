@@ -11,6 +11,7 @@ launch-templates:
     init-steps:
       - name: checkout repo
         uses: 'nrwl/nx-cloud-workflows/main/workflow-steps/checkout/main.yaml'
+      - script: sleep 10000
 #      - name: out of memory
 #        script: |
 #          node -e "
