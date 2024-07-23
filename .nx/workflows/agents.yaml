@@ -73,6 +73,8 @@ launch-templates:
     init-steps:
       - name: checkout repo
         uses: 'nrwl/nx-cloud-workflows/v1.1/workflow-steps/checkout/main.yaml'
+      - name: wait a minute..
+        script: sleep 60
       - name: test docker
         script: docker pull mongo
       #      - name: sleep
