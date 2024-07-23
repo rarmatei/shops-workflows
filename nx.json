@@ -80,15 +80,7 @@
       "style": "css"
     }
   },
-  "bustCache": 400,
-  "nxCloudAccessToken": "NmQ0NmNmNDUtZjY1My00NTljLWExZmEtYjgxOWZkYWQ5YWRifHJlYWQtd3JpdGU=",
-  "nxCloudUrl": "http://k8s-default-nxcloudi-f36cd47328-1106899164.us-east-1.elb.amazonaws.com",
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "nx-cloud",
-      "options": {
-        "customProxyConfigPath": "./custom-proxy-config.js"
-      }
-    }
-  }
+  "bustCache": 401,
+  "nxCloudAccessToken": "ZGQ1NzcyMTUtYzgxMC00OGM2LTkwMWUtOWNlYjM2Mzk0MGYyfHJlYWQtd3JpdGU=",
+  "nxCloudUrl": "https://staging.nx.app"
 }
