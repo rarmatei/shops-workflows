@@ -1,68 +1,4 @@
 launch-templates:
-  nx-repo-large-js:
-    resource-class: 'docker_linux_amd64/small'
-#    enableDindWithPrivilegedContainers: true
-    image: 'ubuntu22.04-node20.11-v7'
-    env:
-      GIT_AUTHOR_EMAIL: test@test.com
-      GIT_AUTHOR_NAME: Test
-      GIT_COMMITTER_EMAIL: test@test.com
-      GIT_COMMITTER_NAME: Test
-#      SELECTED_PM: 'pnpm'
-      NPM_CONFIG_PREFIX: '/home/workflows/.npm-global'
-    init-steps:
-#      - name: sleep
-#        script: sleep 1200
-      - name: print info
-        script: |
-          echo "User ID (UID): $(id -u)"
-          echo "Group ID (GID): $(id -g)"
-          echo "Primary Group Name: $(id -gn)"
-          echo "All Group Information: $(id)"
-          whoami
-      - name: install package
-        script: |
-          sudo apt-get update
-          sudo apt-get install -y tree
-      - name: Checkout
-        uses: 'https://rares:BBDC-NjExOTUzNjQ0MTE0Ogq%2Ft7H1KUS0mdTBlIgQhLUMGCO5@bitbucket.ops.cloud.nx.app/projects/SHOPS/repos/nx-cloud-workflows/raw/workflow-steps/checkout/main.yaml'
-      - name: Cache restore
-        uses: 'nrwl/nx-cloud-workflows/v1.1/workflow-steps/cache/main.yaml'
-        env:
-          KEY: 'pnpm-lock.yaml'
-          PATHS: |
-            node_modules
-            ~/.cache/Cypress
-            ~/.pnpm-store
-          BASE_BRANCH: 'master'
-
-      - name: Install Pnpm
-        script: |
-          npm install -g @pnpm/exe@8.7.4
-
-      - name: Pnpm Install
-        script: |
-          pnpm install --frozen-lockfile
-
-
-      - name: Install Cypress
-        script: pnpm exec cypress install
-
-      - name: Install Rust
-        script: |
-          curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | sh -s -- -y
-          source "$HOME/.cargo/env"
-          rustup toolchain install 1.70.0
-
-      - name: Configure git metadata (needed for lerna smoke tests)
-        script: |
-          git config --global user.email test@test.com
-          git config --global user.name "Test Test"
-
-      - name: Load Cargo Env
-        script: echo "PATH=$HOME/.cargo/bin:$PATH" >> $NX_CLOUD_ENV
-      - name: sleep
-        script: sleep 1200
   rares-linux-large-js:
     resourceClass: "docker_linux_amd64/medium"
     image: 'ubuntu22.04-node20.11-v10'
@@ -72,39 +8,19 @@ launch-templates:
       NPM_CONFIG_PREFIX: '/home/workflows/.npm-global'
     init-steps:
       - name: checkout repo
-        uses: 'nrwl/nx-cloud-workflows/v1.1/workflow-steps/checkout/main.yaml'
-#      - name: wait a minute..
-#        script: sleep 60
-#      - name: test docker
-#        script: docker pull mongo
-      #      - name: sleep
-#        script: 'sleep $((RANDOM % 120 + 1))'
-#      - name: sleep a lot
-#        script: sleep 300
-#      - name: print lots of logs
-#        script: 'yes "This is a line of text." | head -c 5M'
-#      - name: sleep
-#        script: 'sleep $((RANDOM % 120 + 1))'
-#      - name: sleep more
-#        script: 'sleep 1200'
-#      - name: fail randomly half the time
-#        script: 'sleep $((RANDOM % 20 + 1)) && if (( RANDOM % 2 == 0 )); then exit 1; fi'
-#      - name: fail randomly half the time
-#        script: 'sleep $((RANDOM % 20 + 1)) && if (( RANDOM % 2 == 0 )); then exit 1; fi'
+        uses: 'nrwl/nx-cloud-workflows/v4/workflow-steps/checkout/main.yaml'
       - name: Cache restore
-        uses: 'nrwl/nx-cloud-workflows/v1.1/workflow-steps/cache/main.yaml'
-        env:
-          KEY: '"1" | pnpm-lock.yaml'
-          PATHS: |
+        uses: 'nrwl/nx-cloud-workflows/v4/workflow-steps/cache/main.yaml'
+        inputs:
+          key: '"1" | pnpm-lock.yaml'
+          paths: |
             node_modules
             ~/.cache/Cypress
             ~/.pnpm-store
-          BASE_BRANCH: 'master'
-
+          base_branch: 'master'
       - name: Install Pnpm
         script: |
           npm install -g @pnpm/exe@8.7.4
-
       - name: Pnpm Install
         script: |
           pnpm install --frozen-lockfile
