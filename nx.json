@@ -49,7 +49,7 @@
     "@nx/angular:component": { "style": "css" }
   },
   "bustCache": 357,
-  "nxCloudAccessToken": "ZThiOTY1MjQtZjMzNS00YTA2LWE3ZWEtY2Y0NzlhYzdiMGQ1fHJlYWQtd3JpdGU=",
+  "nxCloudAccessToken": "NTljZDU2YWUtNDA2OC00YWRmLThhMGYtNmFhMGNjYzFhZGVlfHJlYWQtd3JpdGU=",
   "nxCloudUrl": "https://staging.nx.app",
   "tasksRunnerOptions": {
     "default": {
