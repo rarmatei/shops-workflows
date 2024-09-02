@@ -1,53 +1,28 @@
 launch-templates:
-  rares-linux-small-js:
-    resourceClass: "docker_linux_amd64/medium+"
-#    enable-dind-with-privileged-containers: true
-#    image: 'us-east1-docker.pkg.dev/nxcloudoperations/nx-cloud-enterprise-public/nx-agents-base-images:ubuntu22.04-node20.9-v11'
-#    image: 'us-east1-docker.pkg.dev/nxcloudoperations/nx-cloud-enterprise-public/nx-agents-base-images:ubuntu22.04-node20.11-v7'
-    image: 'ubuntu22.04-node20.11-v10-rc1'
-    env:
-#      NX_CLOUD_ACCESS_TOKEN: '{{secrets.NX_CLOUD_ACCESS_TOKEN}}'
-      NPM_CONFIG_PREFIX: '/home/workflows/.npm-global'
-#      NODE_OPTIONS: '--max-old-space-size=12288'
+  npm-linux-medium-js:
+    resourceClass: "docker_linux_amd64/medium"
+    image: 'us-east1-docker.pkg.dev/nxcloudoperations/nx-cloud-enterprise-public/nx-agents-base-images:ubuntu22.04-node20.11-v10'
     init-steps:
       - name: checkout repo
-        uses: 'nrwl/nx-cloud-workflows/main/workflow-steps/checkout/main.yaml'
-      - script: sleep 10000
-#      - name: out of memory
-#        script: |
-#          node -e "
-#          console.log('Starting up...');
-#          let arr = [];
-#          const size = 1024 * 1024 * 10;
-#          const iterations = 1024;
-#          for (let i = 0; i < iterations; i++) {
-#            arr.push(new Array(size).fill('x'));
-#          }
-#          "
-#      - script: sleep 3600
-#      - name: sleep
-#        script: 'sleep $((RANDOM % 120 + 1))'
-#      - name: sleep a lot
-#        script: sleep 300
-#      - name: print lots of logs
-#        script: 'yes "This is a line of text." | head -c 5M'
-#      - name: sleep
-#        script: 'sleep $((RANDOM % 120 + 1))'
-#      - name: sleep more
-#        script: 'sleep 1200'
-#      - name: fail randomly half the time
-#        script: 'sleep $((RANDOM % 20 + 1)) && if (( RANDOM % 2 == 0 )); then exit 1; fi'
-#      - name: fail randomly half the time
-#        script: 'sleep $((RANDOM % 20 + 1)) && if (( RANDOM % 2 == 0 )); then exit 1; fi'
-      - name: node_modules cache 2
-        uses: 'nrwl/nx-cloud-workflows/main/workflow-steps/cache/main.yaml'
-        env:
-          KEY: 'yarn.lock'
-          PATHS: 'node_modules'
-          BASE_BRANCH: 'main'
-      - name: Install Pnpm
-        script: |
-          npm install -g @pnpm/exe@8.7.4 --force
-      - name: Pnpm Install
-        script: |
-          pnpm install --frozen-lockfile
+        uses: 'nrwl/nx-cloud-workflows/v4/workflow-steps/checkout/main.yaml'
+      - name: Restore Node Modules Cache
+        uses: 'nrwl/nx-cloud-workflows/v4/workflow-steps/cache/main.yaml'
+        inputs:
+          key: 'package-lock.json|yarn.lock|pnpm-lock.yaml'
+          paths: ~/.npm
+#          paths: ~/.pnpm-store
+#          paths: ~/.cache/yarn
+          base-branch: 'main'
+      - name: Restore Browser Binary Cache
+        uses: 'nrwl/nx-cloud-workflows/v4/workflow-steps/cache/main.yaml'
+        inputs:
+          key: 'package-lock.json|yarn.lock|pnpm-lock.yaml|"browsers"'
+          paths: |
+            ~/.cache/Cypress
+            ~/.cache/ms-playwright
+          base-branch: 'main'
+      - name: Install Node Modules
+        uses: 'nrwl/nx-cloud-workflows/v4/workflow-steps/install-node-modules/main.yaml'
+      - name: Install Browsers (if needed)
+        uses: 'nrwl/nx-cloud-workflows/v4/workflow-steps/install-browsers/main.yaml'
+
