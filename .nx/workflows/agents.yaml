@@ -3,7 +3,7 @@ launch-templates:
     resourceClass: "docker_linux_amd64/medium"
     image: 'us-east1-docker.pkg.dev/nxcloudoperations/nx-cloud-enterprise-public/nx-agents-base-images:ubuntu22.04-node20.11-v10'
     env:
-      NPM_CONFIG_LOGLEVEL=verbose
+      NPM_CONFIG_LOGLEVEL: verbose
     init-steps:
       - name: checkout repo
         uses: 'nrwl/nx-cloud-workflows/v4/workflow-steps/checkout/main.yaml'
