@@ -12,7 +12,7 @@ launch-templates:
       - name: Restore Node Modules Cache
         uses: 'nrwl/nx-cloud-workflows/v4/workflow-steps/cache/main.yaml'
         inputs:
-          key: 'package-lock.json|yarn.lock|pnpm-lock.yaml|"7"'
+          key: 'package-lock.json|yarn.lock|pnpm-lock.yaml|"8"'
 #          paths: node_modules
           paths: ../.npm
 #          paths: ../.pnpm-store
