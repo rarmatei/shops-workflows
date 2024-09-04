@@ -7,14 +7,15 @@ launch-templates:
       SELECTED_PM: 'npm'
       NPM_CONFIG_PREFIX: '/home/workflows/workspace/.npm-global'
       NPM_CONFIG_CACHE: '/home/workflows/workspace/.npm'
+      NPM_CONFIG_LOGLEVEL: verbose
     init-steps:
       - name: checkout repo
         uses: 'nrwl/nx-cloud-workflows/v4/workflow-steps/checkout/main.yaml'
       - name: Restore Node Modules Cache
         uses: 'nrwl/nx-cloud-workflows/v4/workflow-steps/cache/main.yaml'
         inputs:
-          key: 'package-lock.json|yarn.lock|pnpm-lock.yaml|"3"'
-          paths: 'node_modules'
+          key: 'package-lock.json|yarn.lock|pnpm-lock.yaml|"4"'
+          paths: '.npm'
           base-branch: 'main'
       - name: Install Node Modules
         script: npm ci --legacy-peer-deps
